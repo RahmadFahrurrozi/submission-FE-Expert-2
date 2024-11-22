@@ -1,0 +1,89 @@
+/* src/styles/favorite.css */
+.like {
+  font-size: 18px;
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  background-color: #db0000;
+  color: white;
+  border: 0;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.like:hover {
+  background-color: #ff1717;
+}
+
+.restaurant-item__not__found {
+  text-align: center;
+  margin: 30px 0;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  color: #666;
+}
+
+.restaurants {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.restaurant-item {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.restaurant-item__header {
+  position: relative;
+}
+
+.restaurant-item__header__poster {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.restaurant-item__header__rating {
+  position: absolute;
+  padding: 8px;
+  bottom: 20px;
+  left: 0;
+  background-color: black;
+  color: white;
+  border-radius: 0 8px 8px 0;
+}
+
+.restaurant-item__content {
+  padding: 16px;
+}
+
+.restaurant__name {
+  margin: 0 0 10px 0;
+}
+
+.restaurant__name a {
+  color: #db0000;
+  text-decoration: none;
+}
+
+.restaurant__city {
+  margin: 0 0 10px 0;
+  color: #666;
+}
+
+.restaurant__description {
+  margin: 0;
+  color: #999;
+  font-size: 14px;
+  line-height: 1.5;
+}
