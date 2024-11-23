@@ -1,6 +1,6 @@
 main {
   width: 100%;
-  padding: 120px 25px 25px;
+  padding: 120px 0 25px;
   margin-bottom: 0;
 }
 
@@ -16,6 +16,14 @@ main {
 
 .skip-link:focus {
   top: 0;
+}
+
+/* Container for hero to handle width constraints */
+.hero-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 25px;
+  margin: 0 auto;
 }
 
 .hero {
@@ -54,6 +62,15 @@ main {
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+.hero-content a {
+  text-decoration: none;
+  min-width: 50px;
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .explore-button {
   margin-top: 20px;
   background: linear-gradient(45deg, #ff6b6b, #feca57);
@@ -64,8 +81,8 @@ main {
   cursor: pointer;
   transition: all 0.5s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  min-width: 44px;
-  min-height: 44px;
+  min-width: 50px;
+  min-height: 50px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -77,7 +94,12 @@ main {
   box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
+/* Mobile first approach with breakpoints */
 @media screen and (max-width: 480px) {
+  .hero-container {
+    padding: 0 10px;
+  }
+  
   .hero {
     padding: 10px;
   }
@@ -88,28 +110,46 @@ main {
 }
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
+  .hero-container {
+    padding: 0 20px;
+  }
+  
   .hero {
     padding: 20px;
   }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
+  .hero-container {
+    padding: 0 30px;
+  }
+  
   .hero {
     padding: 30px;
   }
 }
 
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1025px) and (max-width: 1199px) {
+  .hero-container {
+    padding: 0 40px;
+  }
+  
   .hero {
     padding: 40px;
   }
 }
 
 @media screen and (min-width: 1200px) {
+  .hero-container {
+    width: 1000px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+  }
+  
   .hero {
     width: 100%;
-    max-width: 1200px;
     min-width: 1000px;
-    margin: 0 auto;
+    padding: 40px;
   }
 }

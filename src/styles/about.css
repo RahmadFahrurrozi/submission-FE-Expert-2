@@ -50,6 +50,18 @@
   font-size: 0.9rem;
 }
 
+.about-text a {
+  text-decoration: none;
+  min-width: 50px;
+  min-height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 @media (min-width: 768px) {
   .about {
     padding: 3rem 2rem;

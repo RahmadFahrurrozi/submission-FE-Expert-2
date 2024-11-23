@@ -1,14 +1,14 @@
 class AboutSection extends HTMLElement {
-    constructor() {
-        super();
-    }
+  constructor() {
+    super();
+  }
 
-    connectedCallback() {
-        this.render();
-    }
+  connectedCallback() {
+    this.render();
+  }
 
-    render() {
-        this.innerHTML = `
+  render() {
+    this.innerHTML = `
         <section id="about" class="about">
             <h2>About Us</h2>
                 <div class="about-content">
@@ -28,7 +28,7 @@ class AboutSection extends HTMLElement {
                 </div>
         </section>
         `;
-    }
+  }
 }
 
 customElements.define('about-section', AboutSection);

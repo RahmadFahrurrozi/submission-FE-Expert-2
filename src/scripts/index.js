@@ -17,6 +17,12 @@ const app = new App({
   content: document.querySelector('#mainContent'),
 });
 
+const skipLinkElem = document.querySelector('.skip-link');
+skipLinkElem.addEventListener('click', (event) => {
+  event.preventDefault();
+  document.querySelector('#mainContent').focus();
+});
+
 window.addEventListener('hashchange', () => {
   app.renderPage();
 });

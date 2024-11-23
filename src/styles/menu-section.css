@@ -84,12 +84,20 @@
   border: none;
   color: #fff;
   text-decoration: none;
+  cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 4px;
   transition: background-color 0.3s ease;
 }
 .cta-link {
   text-decoration: none;
   color: #fff;
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+  line-height: 44px;
+  text-align: center;
 }
 .ri-map-pin-fill {
   color: #ff4b4b;

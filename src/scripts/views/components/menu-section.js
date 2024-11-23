@@ -36,8 +36,8 @@ class MenuSection extends HTMLElement {
     this.restaurants.forEach((restaurant) => {
       const menuItem = document.createElement('div');
       const shortDescription = restaurant.description.length > 100
-      ? `${restaurant.description.substring(0, 100)}...`
-      : restaurant.description;
+        ? `${restaurant.description.substring(0, 100)}...`
+        : restaurant.description;
       menuItem.className = 'menu-item';
       menuItem.innerHTML = `
         <img src="${CONFIG.BASE_IMAGE_URL}${restaurant.pictureId}" 
@@ -54,11 +54,9 @@ class MenuSection extends HTMLElement {
             </span>
           </div>
           <p class="description">${shortDescription}</p>
-          <button type="button" class="cta-button">
             <a class="cta-link" href="#/detail-menu/${restaurant.id}">
-              Lihat Detail
+              <button class="cta-button">Lihat Detail</button>
             </a>
-          </button>
         </div>
       `;
       menuList.appendChild(menuItem);

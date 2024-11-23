@@ -26,28 +26,28 @@ const createRestaurantDetailTemplate = (restaurant) => `
 
         <div class="restaurant-categories">
             <h3>Kategori</h3>
-            <p>${restaurant.categories.map(category => category.name).join(', ')}</p>
+            <p>${restaurant.categories.map((category) => category.name).join(', ')}</p>
         </div>
 
         <div class="restaurant-menus">
             <div class="foods">
                 <h3>Menu Makanan</h3>
                 <ul>
-                    ${restaurant.menus.foods.map(food => `<li>${food.name}</li>`).join('')}
+                    ${restaurant.menus.foods.map((food) => `<li>${food.name}</li>`).join('')}
                 </ul>
             </div>
 
             <div class="drinks">
                 <h3>Menu Minuman</h3>
                 <ul>
-                    ${restaurant.menus.drinks.map(drink => `<li>${drink.name}</li>`).join('')}
+                    ${restaurant.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join('')}
                 </ul>
             </div>
         </div>
 
         <div class="restaurant-reviews">
             <h3>Ulasan Pelanggan</h3>
-            ${restaurant.customerReviews.map(review => createReviewTemplate(review)).join('')}
+            ${restaurant.customerReviews.map((review) => createReviewTemplate(review)).join('')}
         </div>
     </div>
     <div id="likeButtonContainer"></div>
@@ -96,21 +96,19 @@ const createRestaurantItemTemplate = (restaurant) => `
       <h3 class="restaurant__name">${restaurant.name}</a></h3>
       <p class="restaurant__city">📍 ${restaurant.city}</p>
       <p class="restaurant__description">${restaurant.description.slice(0, 150)}...</p>
-        <button type="button" class="cta-button">
-            <a class="cta-link" href="#/detail-menu/${restaurant.id}">
-                Lihat Detail
-            </a>
-        </button>
+      <a class="cta-link" href="#/detail-menu/${restaurant.id}">
+        <button class="cta-button">Lihat Detail</button>
+      </a>
     </div>
   </div>
 `;
 
 export {
-    createRestaurantDetailTemplate,
-    createReviewTemplate,
-    createLikeButtonTemplate,
-    createUnlikeButtonTemplate,
-    createLoadingTemplate,
-    createErrorTemplate,
-    createRestaurantItemTemplate
+  createRestaurantDetailTemplate,
+  createReviewTemplate,
+  createLikeButtonTemplate,
+  createUnlikeButtonTemplate,
+  createLoadingTemplate,
+  createErrorTemplate,
+  createRestaurantItemTemplate
 };
