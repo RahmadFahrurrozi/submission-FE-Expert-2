@@ -1,4 +1,3 @@
-/* Base styles (mobile first) */
 .like {
   font-size: 16px;
   position: fixed;
@@ -38,6 +37,18 @@
   padding: 15px;
 }
 
+.content__heading {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 20px 10px;
+  background: linear-gradient(45deg, #ff0000, #feca57);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 .restaurant-item {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
@@ -101,7 +112,6 @@
   overflow: hidden;
 }
 
-/* Tablet (600px and up) */
 @media screen and (min-width: 600px) {
   .restaurants {
     grid-template-columns: repeat(2, 1fr);
@@ -133,7 +143,7 @@
   }
 }
 
-/* Small desktop (900px and up) */
+
 @media screen and (min-width: 900px) {
   .restaurants {
     grid-template-columns: repeat(3, 1fr);
@@ -145,7 +155,7 @@
   }
 }
 
-/* Large desktop (1200px and up) */
+
 @media screen and (min-width: 1200px) {
   .restaurants {
     grid-template-columns: repeat(4, 1fr);

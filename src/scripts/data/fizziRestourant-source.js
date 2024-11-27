@@ -1,43 +1,49 @@
 import API_ENDPOINT from '../globals/api-endpoint';
+import CacheHelper from '../utils/chache-helper';
 
 class FizziRestaurantSource {
   static async listRestaurants() {
     try {
       const response = await fetch(API_ENDPOINT.LIST);
-      console.log('API Response:', response); // Debug log
-
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-
       const responseJson = await response.json();
-      console.log('API Data:', responseJson); // Debug log
-
       return responseJson.restaurants;
     } catch (error) {
       console.error('Error in listRestaurants:', error);
-      throw new Error(`Gagal mengambil daftar restaurant: ${error.message}`);
+      // Ambil dari cache jika ada kesalahan
+      return CacheHelper.revalidateCache(API_ENDPOINT.LIST);
     }
   }
+
   static async detailRestaurant(id) {
     try {
       const response = await fetch(API_ENDPOINT.DETAIL(id));
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
       const responseJson = await response.json();
       return responseJson.restaurant;
     } catch (error) {
-      console.error('Error:', error);
-      throw new Error(`Gagal mengambil detail restaurant dengan id ${id}`);
+      console.error('Error in detailRestaurant:', error);
+      // Ambil dari cache jika ada kesalahan
+      return CacheHelper.revalidateCache(API_ENDPOINT.DETAIL(id));
     }
   }
 
   static async reviewRestaurant(id) {
     try {
       const response = await fetch(API_ENDPOINT.REVIEW(id));
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
       const responseJson = await response.json();
       return responseJson.reviews;
     } catch (error) {
-      console.error('Error:', error);
-      throw new Error(`Gagal mengambil review restaurant dengan id ${id}`);
+      console.error('Error in reviewRestaurant:', error);
+      // Ambil dari cache jika ada kesalahan
+      return CacheHelper.revalidateCache(API_ENDPOINT.REVIEW(id));
     }
   }
 
@@ -53,7 +59,7 @@ class FizziRestaurantSource {
       const responseJson = await response.json();
       return responseJson;
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error in postReview:', error);
       throw new Error('Gagal menambahkan review');
     }
   }
@@ -70,7 +76,7 @@ class FizziRestaurantSource {
       const responseJson = await response.json();
       return responseJson;
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error in favoriteRestaurant:', error);
       throw new Error('Gagal menambahkan restaurant ke favorite');
     }
   }
@@ -83,7 +89,7 @@ class FizziRestaurantSource {
       const responseJson = await response.json();
       return responseJson;
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error in unfavoriteRestaurant:', error);
       throw new Error('Gagal menghapus restaurant dari favorite');
     }
   }
