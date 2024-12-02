@@ -40,8 +40,8 @@ const CacheHelper = {
 
     // Cache gambar restaurant
     registerRoute(
-      ({ request, url }) => 
-        request.destination === 'image' || 
+      ({ request, url }) =>
+        request.destination === 'image' ||
         url.href.startsWith(CONFIG.BASE_IMAGE_URL),
       new CacheFirst({
         cacheName: 'dicoding-restaurant-images',

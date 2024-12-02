@@ -32,6 +32,6 @@ window.addEventListener('load', () => {
   app.renderPage();
   const init = async () => {
     await swRegister();
-  }
+  };
   init();
 });

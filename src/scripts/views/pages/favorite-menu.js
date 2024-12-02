@@ -19,7 +19,8 @@ const Favorite = {
     if (restaurants.length === 0) {
       restaurantsContainer.innerHTML = `
         <div class="restaurant-item__not__found">
-          Belum ada restoran favorit
+          <img src="./images/heros/not-found-favorite.jpg" alt="Kosong">
+            Belum ada restoran favorit
         </div>
       `;
     }

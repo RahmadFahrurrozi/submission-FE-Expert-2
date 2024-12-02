@@ -22,14 +22,30 @@
 }
 
 .restaurant-item__not__found {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center; 
   text-align: center;
   margin: 20px 10px;
-  padding: 15px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  color: #666;
+  padding: 30px; 
+  background-color: #fff; 
+  border-radius: 12px; 
+  color: #333; 
+  transition: transform 0.3s ease; 
 }
 
+.restaurant-item__not__found:hover {
+  transform: translateY(-5px); 
+}
+
+.restaurant-item__not__found img {
+  max-width: 100%; 
+  height: auto; 
+  border-radius: 8px; 
+
+  margin-bottom: 15px; 
+}
 .restaurants {
   display: grid;
   grid-template-columns: 1fr;
